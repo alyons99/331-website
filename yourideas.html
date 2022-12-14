@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Your Ideas</title>
+<link rel="stylesheet" href="lyons_style.css">
+<script scr="http://code.jquery.com/jquery-3.6.1.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryData.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryJSONDataSet.js" type="text/javascript"></script>
+<script>
+    var dsEvents = new Spry.Data.JSONDataSet("events.json", {path:"events.event"});
+</script>
+
+</head>
+<body>
+    <div class="container">
+	<ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meetthecharacters.html">Meet The Characters</a></li>
+        <li><a href="magicitems.html">Magic Items Found</a></li>
+        <li><a href="yourideas.html">Your Ideas</a></li>
+        <li><a href="welcome.html">Welcome Page</a></li>
+        <li><a href="magictest.html">Test Magic</a></li>
+    </ul>
+
+ <form id="commentForm" method ="get" action ="">
+    <fieldset>
+        <legend>Your Suggestions</legend>
+    <p><label>Your Name:
+    <input type="text" id="name" name="name" minlength="2" required></label></p>
+    
+    <p><label>Your E-Mail Address:
+    <input type = "email" id="email" placeholder = "name@domain.com" required /></label></p>
+
+    <p>Do you play D&D? <br>
+        <input type = "radio" id="yes" name="doyouplay" value = "Yes">
+        <label for = "yes">Yes</label><br>
+        <input type = "radio" id="no" name="doyouplay" value = "No">
+        <label for = "no">No</label><br>
+        </p>
+
+    <p><label>If you do play or were to, which class would you play?
+        <select name = "rating">
+        <option selected>- Choose One -</option>
+        <option>Barbarian</option>
+        <option>Bard</option>
+        <option>Cleric</option>
+        <option>Druid</option>
+        <option>Fighter</option>
+        <option>Monk</option>
+        <option>Paladin</option>
+        <option>Ranger</option>
+        <option>Rouge</option>
+        <option>Sorcerer</option>
+        <option>Warlock</option>
+        <option>Wizard</option>
+        </select></label></p>
+
+    <p><label for="suggtype">Suggestion Type:
+        <input list="sugtype" name="suggtype" id="suggtype">
+        <datalist id="sugtype">
+            <option value="Story Idea">
+                <option value="Character Idea">
+                <option value="Magical Item Idea">
+                <option value="Other or Multiple">
+        </datalist></label></p>
+        
+    <p><label>Your suggestion:<br>
+    <textarea name = "comments"
+    rows = "8" cols = "72" required></textarea></label></p>
+    
+    <input type = "submit" id = "submit" value = "Submit">
+    <input type = "reset" value = "Reset">
+</fieldset>
+    </form>
+    <script>
+        $("#commentForm").validate();
+        </script>
+<h2>Here are some other modules you can recommend!</h2>
+    <div id="content1"> 
+        <div spry:region="dsEvents">
+            <table id ="events">
+<tbody>
+<tr>
+  <th scope="col">Name of Module</th>
+  <th scope="col">Date Published</th>
+  <th scope="col">Level Range</th>
+</tr>
+<tr spry:repeat="dsEvents" spry:setrow="dsEvents">
+  <td>{name}</td>
+  <td>{date}</td>
+  <td>{level}</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        </div>
+
+
+</div>
+</body>
+</html>

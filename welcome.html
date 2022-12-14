@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+<link rel="stylesheet" href="lyons_style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	 $('#fetch').click(function() {
+        $.ajax({
+			url: "riddleanswer.txt",
+			type: "GET",
+			dataType:"text",
+			success: function(data){
+				$('#answer').text(data);
+			},
+			error: function(xhr, status, error) {
+				alert("Status:" + status);
+				alert("Error:" + error);
+			}
+		}); // end ajax
+    }); // end click
+  });  // end ready
+</script>
+ <script>
+    //get a global variable for the name just in case we need it
+    var name;
+    //this function sets up the event listener on the submitand reset buttons
+    function start() {
+        document.getElementById("submit").addEventListener("click", displayName, false);
+        document.getElementById("reset").addEventListener("click", resetName, false);
+        document.getElementById("ponder").addEventListener("mouseover", ponder, false);
+        document.getElementById("ponder").addEventListener("mouseout", stopPonder, false);
+    }
+    //this function will take the name entered into the form and place that into local storage with the key name
+    function displayName() {
+        name = document.getElementById("name").value;
+        localStorage.setItem("name", name);
+    }
+    //this function will reset the name to an empty string
+    function resetName() {
+        localStorage.setItem("name", "");
+    }
+    //this function will activate when you mouseover the ponder image, it sets the <p> element secret to the text I want to show
+    function ponder() {
+        document.getElementById( "secret" ).innerHTML = "Secret Text";
+    }
+    //this function will activate when you mouseout of the ponder image, getting rid of the secret text
+    function stopPonder() {
+        document.getElementById( "secret" ).innerHTML = ""; 
+    }
+
+    window.addEventListener("load", start, false);
+
+</script>
+</head>
+<body>
+    <div class="container">
+        <ul id="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meetthecharacters.html">Meet The Characters</a></li>
+            <li><a href="magicitems.html">Magic Items Found</a></li>
+            <li><a href="yourideas.html">Your Ideas</a></li>
+            <li><a href="welcome.html">Welcome Page</a></li>
+            <li><a href="magictest.html">Test Magic</a></li>
+     </ul>
+    
+     <form>
+        Enter your Name: <input type = "text" id = "name">
+        <input type = "submit" id = "submit" value = "Submit">
+        <input type = "reset" id = "reset" value = "Reset">
+     </form>
+
+     <p id = "nameOutput"></p>
+     <p id="randomPic"></p>
+     <img id = "ponder" src="ponder.png" alt="Wizard pondering his orb" width="600" height="400">
+     <h4>Hover the image to scry the secrect information!</h4>
+     <p id = "secret"></p>
+
+     <script>
+        //puts the values we want to print into a variable
+        let text = "<h1>Welcome Back: "+localStorage.getItem("name")+" </h1>";
+        //prints the text out inside the paragraph with the id nameOutput
+        document.getElementById("nameOutput").innerHTML = text;
+
+        //will hold text value for a random image
+        var img;
+        //will hold the rolled images name
+        var monName;
+        //will hold a descriptive sentece about the monster in the image
+        var threatLevel;
+        //will roll a random number
+        switch(Math.floor(Math.random() * 3)) {
+            //the cases will be for the random numbers rolled and will assign values to the 3 variables declaired above
+        case 0:
+            img = "red_dragon.jpeg";
+            monName = "Red Dragon!";
+            threatLevel = " You better run!";
+            break;
+        case 1:
+            img = "xorn.jpeg";
+            monName = "Xorn!";
+            threatLevel = " You might just be able to take him!";
+            break;
+        case 2:
+            img = "goblin.jpeg";
+            monName = "Golbin!";
+            threatLevel = " This should be a piece of cake!";
+            break;
+    }
+        //this is formatting all of the info form the randomzied switch case above
+        let imageOutput = "<img src='"+img+"'alt='One of three random pics.' width='400' height='400'>" + "<p>You have been attacked by a " +monName+threatLevel+"</p>";
+        //outputs the picture along with the text formatted above
+        document.getElementById("randomPic").innerHTML = imageOutput; 
+
+
+    </script>
+
+
+    <h1>Can You Solve the Riddle that Stumped my Party?</h1>
+    <h3>"Time existed before me, but history can only begin after my creation."</h3>
+
+
+    <form>
+        <label>
+          <input type="button" name="fetch" id="fetch" value="Fetch Answer" />
+        </label>
+      </form>
+
+      <h3 id="answer"></h3>
+      
+
+
+    <p>Pictures were taken from D&D Beyond.</p>
+</div>
+</body>
+</html>

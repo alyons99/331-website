@@ -1,0 +1,111 @@
+{
+	"events": {
+		"event": [
+			{
+                "name": "Lost Mines of Phandelver",
+				"date": "July 15, 2014",
+                "level": "01-05"
+			},
+			{
+                "name": "Tyranny of Dragons",
+				"date": "August 19, 2014",
+                "level": "01-15"
+			},
+			{
+                "name": "Princes of the Apocalypse",
+				"date": "April 7, 2015",
+                "level": "01-15"
+
+			},
+			{
+                "name": "Out of the Abyss",
+				"date": "September 15, 2015",
+                "level": "01-15"
+
+			},
+			{
+                "name": "Curse of Strahd",
+				"date": "March 15, 2016",
+                "level": "01-10"
+
+			},
+            {
+                "name": "Storm King's Thunder",
+				"date": "September 6, 2016",
+                "level": "01-11"
+
+			},
+            {
+                "name": "Tales from the Yawning Portal",
+				"date": "March 24, 2017",
+                "level": "01-11"
+
+			},
+            {
+                "name": "Tomb of Annihilation",
+				"date": "September 19, 2017",
+                "level": "01-11"
+
+			},
+            {
+                "name": "Dragon Heist",
+				"date": "September 18, 2018",
+                "level": "01-05"
+
+			},
+            {
+                "name": "Dungeon of the Mad Mage",
+				"date": "November 13, 2018",
+                "level": "05-20"
+
+			},
+            {
+                "name": "Ghosts of Saltmarsh",
+				"date": "May 21, 2019",
+                "level": "01-12"
+
+			},
+            {
+                "name": "Baldur's Gate: Descent into Avernus",
+				"date": "September 17, 2019",
+                "level": "01-13"
+
+			},
+            {
+                "name": "Icewind Dale: Rime of the Frostmaiden",
+				"date": "September 15, 2020",
+                "level": "01-12"
+
+			},
+            {
+                "name": "Candlekeep Mysteries",
+				"date": "March 16, 2021",
+                "level": "01-16"
+
+			},
+            {
+                "name": "The Wild Beyond the Witchlight",
+				"date": "September 21, 2021",
+                "level": "01-08"
+
+			},
+            {
+                "name": "Strixhaven: A Curriculum of Chaos",
+				"date": "December 7, 2021",
+                "level": "01-10"
+
+			},
+            {
+                "name": "Journeys through the Radiant Citadel",
+				"date": "July 19, 2022",
+                "level": "01-11"
+
+			},
+			{
+                "name": "Spelljammer: Adventures in Space",
+				"date": "August 16, 2022",
+                "level": "05-08"
+			}
+		]
+	}
+}

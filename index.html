@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link rel="stylesheet" href="lyons_style.css">
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    //script stuff found at https://scrollrevealjs.org/
+    ScrollReveal({ reset: true });
+
+    //sets up an on-click event on the dragon picture so it can grow using the interval
+    function start() {
+        document.getElementById("dragonPic").addEventListener("click", enlarge, false);
+    }
+    
+    //this function enlarges the picture of the dragon
+    function enlarge() {
+    //create a variable to track the interval
+    var interval;
+    //starting height and width of the pic
+    var height = 150;
+    var width = 250;
+    //calls the set interval
+    interval = setInterval(function() {
+    //increase the height and width proportianlly
+    height += 8;
+    width += 13.75;
+    //when you get to the max height
+    if(height >= 600) {
+        //stop running the interval
+      clearInterval(interval);
+    }
+    //setting the size and the time
+    document.getElementById("dragonPic").style.height = height + 'px';
+    document.getElementById("dragonPic").style.width = width + 'px';
+  }, 16.667);
+}
+
+    window.addEventListener("load", start, false);
+</script>
+</head>
+<body>
+    <div class="container">
+	<ul id="navlist">
+      <li><a href="index.html">Home</a></li>
+	  <li><a href="meetthecharacters.html">Meet The Characters</a></li>
+      <li><a href="magicitems.html">Magic Items Found</a></li>
+      <li><a href="yourideas.html">Your Ideas</a></li>
+      <li><a href="welcome.html">Welcome Page</a></li>
+      <li><a href="magictest.html">Test Magic</a></li>
+ </ul>
+ 
+ 
+ <h1 id = "top" class = "first">What is Dungeons and Dragons?</h1>
+ <p class = "second">I plan on writing some explaining what D&D is.</p>
+ <h1 class = "third">Current Campaign</h1>
+ <figure>
+ <img id = "dragonPic" class="fi" src="https://images.ctfassets.net/swt2dsco9mfe/1sM6XUZXHZOP7l9vfJU7PN/d026f03125c3fb337d58de7d23cc16e2/1920x1080-starter.jpg?q=70&fit=thumb&w=1920&h=1080&fm=avif" 
+ alt="A picture of two players fighting a blue dragon in D&D" width="250" height="150">
+ <figcaption>Offical wallpaper published by Wizards of the Coast for public use.</figcaption>
+</figure>
+<p class ="fourth">
+
+    “Nestled in the rocky foothills of the snow-capped Sword Mountains is the mining town of Phandalin. 
+    Crumbling stone ruins surround the new houses and ships. Phandalins residents are quiet, 
+    hard-working folk who came from distant cities to eke out a life amid the harsh wilderness. 
+    They are farmers, stonecutters, blacksmiths, traders, prospectors, and children. The town has 
+    no walls and no garrison, but most adults keep weapons within easy reach. Visitors are more than 
+    welcome, if they bring coin or news. The Townmasters hall, found in the center of town in the 
+    square where the townsfolk congregate, has sturdy stone walls, a pitched wooden roof, and a bell 
+    tower at the back. The job board next to the front door features a sparse number of notices, all 
+    written in the Common hand. Here, we find a pair of adventurers discussing the freshly penned notices."
+</p>
+<p class = "fifth"> This was the introduction paragraph I read to my players when starting this most recent
+    D&D, or Dungenons and Dragons game, <a href="https://www.dndbeyond.com/sources/doip">Dragon of Icespire Peak.</a> This was the first game I have ever been able to play in-person,
+    and it is frequently the best part of my week. I created this site because I am passonate about this
+    hobby and love talking and writing about it. 
+</p>
+
+<h1 class = "sixth">What Comes Next?</h1>
+<figure>
+    <img class="fi" src="https://images.ctfassets.net/swt2dsco9mfe/1bOblZwloAyqen3XyYbxEM/5a0cd8181c31bc9adbc06391ea86b1e6/GreenFaceMask_Expansion_iPad_WallpaperTemplate.jpeg"
+        alt="A picture of two players fighting a blue dragon in D&D" width="400" height="400">
+    <figcaption>Offical wallpaper published by Wizards of the Coast for public use.</figcaption>
+   </figure>
+<p class = "seventh">
+    My current plan is to finish up this campaign by summer of 2023. After that, I plan of running a 
+    game of <a href="https://www.dndbeyond.com/sources/toa">Tomb of Annihilation</a>, using the officialy published book of the same name.
+</p>
+<h1 class = "eighth">Check of D&D for Yourself!</h1>
+<p><a href="https://dnd.wizards.com/">Here is a link to the offical D&D website.</a></p>
+
+<p><a href="https://mason.gmu.edu/~alyons20/lyons_style.css">Absolute link to CSS.</a></p>
+ <div id="footer">
+ <p><h3>Disclaimer</h3>This website is developed as an educational project. Certain materials are included under the fair use exemption of the U.S. 
+    Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use.
+    <p id = "lastMod"></p>
+</div>
+  <p><a href = "#top">Go to top of page.</a></p>
+</div>
+<script>
+    //getting the last modfied time
+    let text = "The last time this document was edited was: " + document.lastModified;
+    //writes the last modified line
+    document.getElementById("lastMod").innerHTML = text;
+
+        //this is all of the scroll reveal code. Includes delays for now but I think I can make it so it only comes in as you scroll. I will tweak it later.
+		ScrollReveal().reveal('.first')
+        ScrollReveal().reveal('.second', {delay: 1000})
+        ScrollReveal().reveal('.third', {delay: 3000})
+        ScrollReveal().reveal('.fourth', {delay: 5000})
+        ScrollReveal().reveal('.fifth', {delay: 7000})
+        ScrollReveal().reveal('.sixth', {delay: 9000})
+        ScrollReveal().reveal('.seventh', {delay: 10000})
+        ScrollReveal().reveal('.eighth', {delay: 11000})
+</script>
+</body>
+</html>

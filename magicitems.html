@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Magic Items</title>
+<link rel="stylesheet" href="lyons_style.css">
+
+
+
+
+<script>
+    //this code covers the opening and closing of the window. It was taken directly from the example used in class.
+    var child;
+    function start() {
+
+        //these grab the two buttons that open and close the window
+        document.getElementById("openW").addEventListener("click", open_window, false);
+        document.getElementById("closeW").addEventListener("click", close_window, false);
+
+        //these two grab the two buttons which will be used to enlarge and reduce the text size
+        document.getElementById("enlarge").addEventListener("click", enlarge_text, false);
+        document.getElementById("reduce").addEventListener("click", reduce_text, false);
+    }
+    function open_window() {
+        child = window.open("https://www.herebetaverns.com/item-generator","", "menubar=yes height=700 width=700");
+        document.getElementById("closeW").disabled=false;
+    }
+    function close_window() {
+        if(child.closed) 
+           alert("The window has been closed")
+        else
+            child.close();
+    }
+    //enlarges the font size
+    function enlarge_text() {
+        document.getElementById("magitems").style.fontSize = "20px";
+    }
+    //reduces the font size
+    function reduce_text() {
+        document.getElementById("magitems").style.fontSize = "10px";
+    }
+    //executes start when the window loads
+    window.addEventListener("load", start, false);
+    
+
+
+</script>
+
+
+
+
+
+</head>
+<body>
+    <div class="container">
+	<ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meetthecharacters.html">Meet The Characters</a></li>
+        <li><a href="magicitems.html">Magic Items Found</a></li>
+        <li><a href="yourideas.html">Your Ideas</a></li>
+        <li><a href="welcome.html">Welcome Page</a></li>
+        <li><a href="magictest.html">Test Magic</a></li>
+ </ul>
+
+
+
+<h1>List of Magic Items Players Have Found</h1>
+<ol class="c" id="magitems">
+    <li>Flail of +1 
+        <ul class="b">
+            <li>Type: Weapon </li>
+            <li>Rarity: Uncommon </li>
+            <li>Status: Sold to shopkeep </li>
+        </ul>
+    </li>
+    
+
+    <li>Potion of Minor Healing 
+        <ul class="b">
+            <li>Type: Potion </li>
+            <li>Rarity: Common </li>
+            <li>Status: Consumed</li>
+        </ul>
+    </li>
+    
+
+    <li>Potion of Water Breathing 
+        <ul class="b">
+            <li>Type: Potion </li>
+            <li>Rarity: Uncommon </li>
+            <li>Status: In Lord Harking's Inventory </li>
+        </ul>
+    </li>
+    
+</ol>
+
+<form id="form1" name="form1" method="post">
+	<p>Time to cast the 2nd level spell: Enlarge Reduce! <input type="button" name ="enlarge" id="enlarge" value="Enlarge!">
+        <input type="button" name ="reduce" id="reduce" value="Reduce!">
+	</form>
+
+<p>A list of all magical items can be found in the <a href="https://www.dndbeyond.com/sources/phb">Players Hand Book.</a></p>
+
+<form id="form2" name="form2" method="post">
+	<p>Generate some magic items for your game: <input type="button" name ="openW" id="openW" value="Generate Items">
+	<input type="button" name ="closeW" id="closeW" value="Close Window" disabled = "disabled">
+	</form>
+
+</div>
+</body>
+</html>

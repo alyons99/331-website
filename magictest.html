@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Your Ideas</title>
+<link rel="stylesheet" href="lyons_style.css">
+
+<style>
+    #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+    #sortable li span { position: absolute; margin-left: -1.3em; }
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<script>
+    $( function() {
+      $( "#sortable" ).sortable();
+    } );
+    </script>
+
+<script>
+    $(document).ready(function(){
+      $("#button1").click(function(){
+        $("#div1").fadeOut("slow");
+        $("#div2").fadeOut("slow");
+        $("#div3").fadeOut("slow");
+        $("#div4").fadeIn("slow");
+        $("#div5").fadeIn("slow");
+      });
+    });
+
+
+    $(document).ready(function(){
+      $("#button2").click(function(){
+        $("#div1").fadeIn("slow");
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn("slow");
+        $("#div4").fadeOut("slow");
+        $("#div5").fadeOut("slow");
+      });
+    });
+
+    $(document).ready(function(){
+      $("#button3").click(function(){
+        $("#text2click").fadeIn();
+      });
+    });
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+	<ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meetthecharacters.html">Meet The Characters</a></li>
+        <li><a href="magicitems.html">Magic Items Found</a></li>
+        <li><a href="yourideas.html">Your Ideas</a></li>
+        <li><a href="welcome.html">Welcome Page</a></li>
+        <li><a href="magictest.html">Test Magic</a></li>
+    </ul>
+
+    <div id="div1"><h1 id="invis">Cast Greater Invisiblity!</h1></div>
+<div id="div2"><button id="button1">Cast the Spell</button></div><br><br>
+ <div id="div3"><img src="niv_pic.jpg" alt= "Picture of a player" height="300" width="200"></div>
+ 
+ <div id="div4" style="display: none;"><h1 id="true">Cast Truesight!</h1></div>
+ <div id="div5" style="display: none;"><button id="button2">Cast the Spell</button></div><br><br>
+
+<h1>Can You Sort The Following Inconic Spells From Highest to Lowest Spell Level?</h1>
+ <ul id="sortable">
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Dominate Person</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Teleport</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Darkness</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Disintigrate</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Greater Invisibility</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Disguise Self</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Telepathy</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Fireball</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Wish</li>
+  </ul>
+  <div id="div6"><button id="button3">Click to See the Correct Order</button></div>
+  <div id="text2click" style="display: none;">
+    <ul>
+<li>1st Level: Disguise Self</li>
+<li>2nd Level: Darkness</li>
+<li>3rd Level: Fireball</li>
+<li>4th Level: Greater Invisiblity</li>
+<li>5th Level: Dominate Person</li>
+<li>6th Level: Disintigrate</li>
+<li>7th Level: Teleport</li>
+<li>8th Level: Telepathy</li>
+<li>9th Level: Wish</li>
+  </ul>
+</div>
+</div>
+</body>
+</html>
